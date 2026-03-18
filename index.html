@@ -1,0 +1,2651 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Website Resmi SMP Negeri Alalau - Kabupaten Alor, Nusa Tenggara Timur"
+    />
+    <title>SMP Negeri Alalau - Sekolah Unggulan</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome untuk Ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* --- CSS VARIABLES & RESET --- */
+      :root {
+        --primary-color: #1e3a8a;
+        --secondary-color: #f59e0b;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --bg-light: #f3f4f6;
+        --white: #ffffff;
+        --max-width: 1200px;
+        --header-height: 80px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      html {
+        font-size: 16px;
+        scroll-padding-top: var(--header-height);
+      }
+
+      body {
+        color: var(--text-dark);
+        line-height: 1.6;
+        background-color: var(--white);
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* --- UTILITIES --- */
+      .container {
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+
+      .btn-primary {
+        background-color: var(--secondary-color);
+        color: var(--white);
+      }
+
+      .btn-primary:hover {
+        background-color: #d97706;
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--white);
+        color: var(--white);
+        margin-left: 10px;
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background-color: var(--white);
+        color: var(--primary-color);
+      }
+
+      .btn-small {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+      }
+
+      .btn-medium {
+        padding: 10px 25px;
+        font-size: 1rem;
+      }
+
+      .btn-full {
+        width: 100%;
+        text-align: center;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 0 10px;
+      }
+
+      .section-title h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        word-wrap: break-word;
+      }
+
+      .section-title p {
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+
+      section {
+        padding: 60px 0;
+        width: 100%;
+      }
+
+      /* --- HEADER / NAVBAR --- */
+      header {
+        background-color: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        height: var(--header-height);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--header-height);
+        padding: 0 20px;
+        max-width: var(--max-width);
+        margin: 0 auto;
+      }
+
+      .logo {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        font-weight: 700;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-links a {
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--secondary-color);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--primary-color);
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-menu-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      /* --- MOBILE MENU - HALF SCREEN --- */
+      .mobile-nav-overlay {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: 50vh; /* 50% layar saja */
+        background: linear-gradient(
+          180deg,
+          var(--white) 0%,
+          var(--bg-light) 100%
+        );
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        overflow-y: auto;
+        animation: slideDownMenu 0.4s ease;
+      }
+
+      .mobile-nav-overlay.active {
+        display: block;
+      }
+
+      .mobile-nav-content {
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .mobile-nav-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        background: var(--white);
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-left: 4px solid transparent;
+      }
+
+      .mobile-nav-item:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(30, 58, 138, 0.2);
+        border-left: 4px solid var(--secondary-color);
+        background: linear-gradient(135deg, var(--white) 0%, #e0e7ff 100%);
+      }
+
+      .mobile-nav-item i {
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        width: 25px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-nav-item:hover i {
+        transform: scale(1.2) rotate(10deg);
+        color: var(--secondary-color);
+      }
+
+      .mobile-nav-item span {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .mobile-nav-item:hover span {
+        color: var(--primary-color);
+      }
+
+      .mobile-nav-close {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px 0;
+      }
+
+      .mobile-nav-close-btn {
+        background: var(--primary-color);
+        color: var(--white);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-nav-close-btn:hover {
+        background: var(--secondary-color);
+        transform: rotate(90deg);
+      }
+
+      @keyframes slideDownMenu {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* --- HERO SECTION --- */
+      .hero {
+        min-height: 100vh;
+        background:
+          linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.75)),
+          url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+        padding-top: var(--header-height);
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 20px;
+        line-height: 1.3;
+        word-wrap: break-word;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .hero-content p {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 1s ease-out 0.3s backwards;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 1s ease-out 0.6s backwards;
+      }
+
+      /* --- STATS SECTION --- */
+      .stats {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 40px 0;
+        width: 100%;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        text-align: center;
+      }
+
+      .stat-item h3 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        color: var(--secondary-color);
+        margin-bottom: 5px;
+      }
+
+      .stat-item p {
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        opacity: 0.9;
+      }
+
+      /* --- VISI MISI SECTION --- */
+      .vision-mission {
+        background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%);
+        width: 100%;
+      }
+
+      .vision-mission-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .vm-card {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vm-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--secondary-color);
+      }
+
+      .vm-card.visi::before {
+        background: var(--primary-color);
+      }
+
+      .vm-card h3 {
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .vm-card h3 i {
+        color: var(--secondary-color);
+      }
+
+      .vm-card p {
+        color: var(--text-dark);
+        line-height: 1.8;
+        font-size: clamp(0.95rem, 2vw, 1.05rem);
+      }
+
+      .vm-card ul {
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      .vm-card ul li {
+        margin-bottom: 10px;
+        color: var(--text-dark);
+        position: relative;
+        padding-left: 25px;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+
+      .vm-card ul li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+        font-weight: bold;
+      }
+
+      /* --- SAMBUTAN KEPSEK --- */
+      .principal {
+        background-color: var(--white);
+        width: 100%;
+      }
+
+      .principal-content {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .principal-img {
+        width: 100%;
+      }
+
+      .principal-img img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 20px 20px 0px var(--bg-light);
+        margin: 0 auto;
+        display: block;
+      }
+
+      .principal-text h3 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        font-size: clamp(1.5rem, 3vw, 1.8rem);
+      }
+
+      .principal-text p {
+        color: var(--text-dark);
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-size: clamp(0.95rem, 2vw, 1rem);
+      }
+
+      .signature {
+        margin-top: 20px;
+        font-style: italic;
+        color: var(--text-light);
+      }
+
+      .signature p {
+        margin-bottom: 5px;
+      }
+
+      /* --- FASILITAS SECTION --- */
+      .facilities {
+        background-color: var(--bg-light);
+        width: 100%;
+      }
+
+      .facilities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+
+      .facility-card {
+        background: var(--white);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .facility-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .facility-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, var(--primary-color), #2563eb);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .facility-icon i {
+        font-size: 2rem;
+        color: var(--white);
+      }
+
+      .facility-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+      }
+
+      .facility-card p {
+        color: var(--text-light);
+        font-size: clamp(0.85rem, 2vw, 0.9rem);
+        line-height: 1.6;
+      }
+
+      /* --- PRESTASI SECTION --- */
+      .achievements {
+        background-color: var(--white);
+        width: 100%;
+      }
+
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .achievement-card {
+        background: linear-gradient(135deg, var(--primary-color), #2563eb);
+        color: var(--white);
+        padding: 25px;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+
+      .achievement-card:hover {
+        transform: scale(1.03);
+      }
+
+      .achievement-card::before {
+        content: "🏆";
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 6rem;
+        opacity: 0.1;
+      }
+
+      .achievement-level {
+        display: inline-block;
+        background: var(--secondary-color);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .achievement-card h3 {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        margin-bottom: 10px;
+      }
+
+      .achievement-card p {
+        opacity: 0.9;
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+      }
+
+      .achievement-year {
+        margin-top: 15px;
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        opacity: 0.8;
+      }
+
+      /* --- KEUNGGULAN (FEATURES) --- */
+      .features {
+        background-color: var(--bg-light);
+        width: 100%;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .feature-card {
+        background: var(--white);
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+        text-align: center;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .feature-icon {
+        font-size: clamp(2.5rem, 5vw, 3rem);
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+      }
+
+      .feature-card h3 {
+        margin-bottom: 15px;
+        color: var(--primary-color);
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      }
+
+      .feature-card p {
+        color: var(--text-light);
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+        line-height: 1.6;
+      }
+
+      /* --- TESTIMONI SECTION --- */
+      .testimonials {
+        background: linear-gradient(135deg, var(--primary-color), #2563eb);
+        color: var(--white);
+        width: 100%;
+      }
+
+      .testimonials .section-title h2 {
+        color: var(--white);
+      }
+
+      .testimonials .section-title p {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .testimonial-card {
+        background: var(--white);
+        color: var(--text-dark);
+        padding: 25px;
+        border-radius: 15px;
+        position: relative;
+      }
+
+      .testimonial-card::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 3rem;
+        color: var(--secondary-color);
+        opacity: 0.3;
+        font-family: Georgia, serif;
+      }
+
+      .testimonial-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-content p {
+        font-style: italic;
+        margin-bottom: 20px;
+        line-height: 1.8;
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .testimonial-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .testimonial-author h4 {
+        color: var(--primary-color);
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+
+      .testimonial-author span {
+        color: var(--text-light);
+        font-size: clamp(0.8rem, 2vw, 0.85rem);
+      }
+
+      /* --- FAQ SECTION --- */
+      .faq {
+        background-color: var(--bg-light);
+        width: 100%;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      .faq-item {
+        background: var(--white);
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+
+      .faq-question {
+        padding: 18px 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        color: var(--primary-color);
+        transition: background 0.3s;
+        font-size: clamp(0.95rem, 2vw, 1rem);
+      }
+
+      .faq-question:hover {
+        background: var(--bg-light);
+      }
+
+      .faq-question i {
+        transition: transform 0.3s;
+        flex-shrink: 0;
+      }
+
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 20px;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+        padding: 0 20px 18px;
+      }
+
+      .faq-answer p {
+        color: var(--text-dark);
+        line-height: 1.8;
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+      }
+
+      /* --- GALERI --- */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .gallery-card {
+        background: var(--white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .gallery-card-content {
+        padding: 20px;
+      }
+
+      .gallery-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+      }
+
+      .gallery-card p {
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+        line-height: 1.6;
+      }
+
+      .gallery-meta {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: clamp(0.8rem, 2vw, 0.85rem);
+        color: var(--text-light);
+        flex-wrap: wrap;
+      }
+
+      .gallery-meta span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      /* --- MODAL --- */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        overflow: auto;
+        animation: fadeIn 0.3s;
+        padding: 20px;
+      }
+
+      .modal-content {
+        background-color: var(--white);
+        margin: 5% auto;
+        padding: 0;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 800px;
+        max-height: 85vh;
+        overflow-y: auto;
+        animation: slideDown 0.4s;
+        position: relative;
+      }
+
+      .modal-header {
+        position: relative;
+        height: 250px;
+      }
+
+      .modal-header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: var(--white);
+        font-size: 1.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.6);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        z-index: 10;
+      }
+
+      .close-modal:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: rotate(90deg);
+      }
+
+      .modal-body {
+        padding: 25px;
+      }
+
+      .modal-body h2 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        word-wrap: break-word;
+      }
+
+      .modal-meta {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--bg-light);
+        flex-wrap: wrap;
+      }
+
+      .modal-meta span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-light);
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
+      }
+
+      .modal-description {
+        color: var(--text-dark);
+        line-height: 1.8;
+        font-size: clamp(0.95rem, 2vw, 1.05rem);
+      }
+
+      .modal-description p {
+        margin-bottom: 15px;
+      }
+
+      /* --- PPDB EMAIL MODAL --- */
+      .ppdb-modal {
+        display: none;
+        position: fixed;
+        z-index: 3000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        animation: fadeIn 0.3s;
+        padding: 20px;
+      }
+
+      .ppdb-modal-content {
+        background-color: var(--white);
+        margin: 10% auto;
+        padding: 30px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 450px;
+        text-align: center;
+        animation: slideDown 0.4s;
+        position: relative;
+      }
+
+      .ppdb-modal-content i {
+        font-size: 3.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+      }
+
+      .ppdb-modal-content h2 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
+      }
+
+      .ppdb-modal-content p {
+        color: var(--text-light);
+        margin-bottom: 20px;
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+      }
+
+      .email-box {
+        background: var(--bg-light);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 2px dashed var(--primary-color);
+      }
+
+      .email-box p {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0;
+        word-break: break-all;
+      }
+
+      .email-box small {
+        display: block;
+        margin-top: 10px;
+        color: var(--text-light);
+        font-size: clamp(0.8rem, 2vw, 0.85rem);
+      }
+
+      .copy-btn {
+        background: var(--primary-color);
+        color: var(--white);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: 0.3s;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .copy-btn:hover {
+        background: var(--secondary-color);
+      }
+
+      .close-ppdb {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--text-light);
+        transition: 0.3s;
+      }
+
+      .close-ppdb:hover {
+        color: var(--primary-color);
+      }
+
+      /* --- STRUCTURE MODAL --- */
+      .structure-modal {
+        display: none;
+        position: fixed;
+        z-index: 2500;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        overflow: auto;
+        animation: fadeIn 0.3s;
+        padding: 20px;
+      }
+
+      .structure-modal-content {
+        background-color: var(--white);
+        margin: 5% auto;
+        padding: 0;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 850px;
+        max-height: 85vh;
+        overflow-y: auto;
+        animation: slideDown 0.4s;
+        position: relative;
+      }
+
+      .structure-modal-header {
+        background: linear-gradient(to right, var(--primary-color), #2563eb);
+        color: var(--white);
+        padding: 25px;
+        border-radius: 15px 15px 0 0;
+        text-align: center;
+      }
+
+      .structure-modal-header h2 {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+        margin-bottom: 8px;
+      }
+
+      .structure-modal-header p {
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
+        opacity: 0.9;
+      }
+
+      .close-structure {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: var(--white);
+        font-size: 1.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.2);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+      }
+
+      .close-structure:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: rotate(90deg);
+      }
+
+      .structure-modal-body {
+        padding: 25px;
+      }
+
+      .org-chart {
+        text-align: center;
+      }
+
+      .org-box {
+        background: var(--bg-light);
+        padding: 15px 20px;
+        border-radius: 8px;
+        display: inline-block;
+        margin: 10px;
+        border-left: 4px solid var(--primary-color);
+        min-width: 200px;
+      }
+
+      .org-box h4 {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+
+      .org-box p {
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
+        color: var(--text-dark);
+      }
+
+      .org-box.head {
+        background: var(--primary-color);
+        color: var(--white);
+        border-left: none;
+      }
+
+      .org-box.head h4,
+      .org-box.head p {
+        color: var(--white);
+      }
+
+      .org-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      /* --- MAPS SECTION --- */
+      .maps-section {
+        background-color: var(--bg-light);
+        width: 100%;
+      }
+
+      .maps-container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .maps-info h3 {
+        color: var(--primary-color);
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        margin-bottom: 20px;
+      }
+
+      .maps-info-box {
+        background: var(--white);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .maps-info-box h4 {
+        color: var(--secondary-color);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+        flex-wrap: wrap;
+      }
+
+      .maps-info-box p {
+        color: var(--text-dark);
+        line-height: 1.8;
+        margin-bottom: 8px;
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+      }
+
+      .maps-info-box i {
+        color: var(--primary-color);
+        width: 20px;
+        flex-shrink: 0;
+      }
+
+      .maps-frame {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        height: 400px;
+        width: 100%;
+      }
+
+      .maps-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* --- CTA SECTION --- */
+      .cta-section {
+        background: linear-gradient(to right, var(--primary-color), #2563eb);
+        color: var(--white);
+        text-align: center;
+        width: 100%;
+      }
+
+      .cta-section h2 {
+        margin-bottom: 20px;
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        padding: 0 10px;
+      }
+
+      .cta-section p {
+        margin-bottom: 30px;
+        color: #e0e7ff;
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        padding: 0 10px;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        background-color: #111827;
+        color: #d1d5db;
+        padding: 50px 0 20px;
+        width: 100%;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      .footer-col h4 {
+        color: var(--white);
+        margin-bottom: 20px;
+        font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+      }
+
+      .footer-col p {
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+        line-height: 1.7;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-col ul li a {
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--secondary-color);
+      }
+
+      .footer-col ul li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: clamp(0.9rem, 2vw, 0.95rem);
+      }
+
+      .footer-col ul li i {
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: 0.3s;
+        flex-shrink: 0;
+      }
+
+      .social-links a:hover {
+        background: var(--secondary-color);
+        color: var(--white);
+      }
+
+      .copyright {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        font-size: clamp(0.85rem, 2vw, 0.9rem);
+      }
+
+      /* --- ANIMATIONS --- */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ===========================================
+   RESPONSIVE MEDIA QUERIES - OPTIMIZED
+   =========================================== */
+
+      /* Tablet & iPad (768px - 968px) */
+      @media (max-width: 968px) {
+        .container {
+          padding: 0 15px;
+        }
+
+        .maps-container {
+          grid-template-columns: 1fr;
+        }
+
+        .maps-frame {
+          height: 350px;
+        }
+
+        .principal-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 30px;
+        }
+
+        .principal-img {
+          order: -1;
+        }
+
+        .principal-img img {
+          max-width: 300px;
+        }
+
+        .vision-mission-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-outline {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+
+      /* Mobile Phone (320px - 768px) */
+      @media (max-width: 768px) {
+        html {
+          font-size: 14px;
+        }
+
+        section {
+          padding: 40px 0;
+        }
+
+        /* Navbar Mobile */
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav-cta .btn {
+          display: none;
+        }
+
+        /* Mobile Menu - Half Screen */
+        .mobile-nav-overlay {
+          display: none;
+        }
+
+        .mobile-nav-overlay.active {
+          display: block;
+        }
+
+        /* Hero Mobile */
+        .hero {
+          min-height: 100vh;
+          background-attachment: scroll;
+        }
+
+        .hero-content h1 {
+          font-size: clamp(1.8rem, 6vw, 2.5rem);
+        }
+
+        .hero-content p {
+          font-size: clamp(0.95rem, 3vw, 1.1rem);
+        }
+
+        /* Stats Mobile */
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .stat-item h3 {
+          font-size: clamp(1.5rem, 5vw, 2rem);
+        }
+
+        /* Cards Mobile */
+        .facilities-grid,
+        .features-grid,
+        .achievements-grid,
+        .testimonials-grid,
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .facility-card,
+        .feature-card,
+        .achievement-card,
+        .testimonial-card,
+        .gallery-card {
+          margin: 0 10px;
+        }
+
+        /* Modal Mobile */
+        .modal-content {
+          margin: 10% auto;
+          width: 95%;
+        }
+
+        .modal-header {
+          height: 200px;
+        }
+
+        .modal-body {
+          padding: 20px;
+        }
+
+        .ppdb-modal-content {
+          margin: 15% auto;
+          padding: 25px 20px;
+          width: 95%;
+        }
+
+        .structure-modal-content {
+          margin: 10% auto;
+          width: 95%;
+        }
+
+        .org-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .org-box {
+          width: 100%;
+          min-width: auto;
+        }
+
+        /* FAQ Mobile */
+        .faq-question {
+          padding: 15px;
+          font-size: 0.95rem;
+        }
+
+        .faq-answer {
+          padding: 0 15px 15px;
+        }
+
+        /* Maps Mobile */
+        .maps-frame {
+          height: 300px;
+        }
+
+        .maps-info-box {
+          padding: 15px;
+        }
+
+        /* Footer Mobile */
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          text-align: center;
+        }
+
+        .footer-col ul li {
+          justify-content: center;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+
+        /* Section Title Mobile */
+        .section-title {
+          margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+          font-size: clamp(1.6rem, 5vw, 2rem);
+        }
+      }
+
+      /* Small Mobile (320px - 480px) */
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 12px;
+        }
+
+        .btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+
+        .hero-content h1 {
+          font-size: clamp(1.6rem, 7vw, 2.2rem);
+        }
+
+        .hero-content p {
+          font-size: clamp(0.9rem, 3.5vw, 1rem);
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+        }
+
+        .stat-item h3 {
+          font-size: clamp(1.4rem, 6vw, 1.8rem);
+        }
+
+        .stat-item p {
+          font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        }
+
+        .facility-icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .facility-icon i {
+          font-size: 1.6rem;
+        }
+
+        .modal-header {
+          height: 180px;
+        }
+
+        .ppdb-modal-content i {
+          font-size: 3rem;
+        }
+
+        .maps-frame {
+          height: 250px;
+        }
+
+        footer {
+          padding: 40px 0 15px;
+        }
+
+        /* Mobile Menu Small Screen */
+        .mobile-nav-overlay {
+          height: 55vh;
+        }
+
+        .mobile-nav-item {
+          padding: 12px 15px;
+        }
+
+        .mobile-nav-item i {
+          font-size: 1.1rem;
+        }
+
+        .mobile-nav-item span {
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Prevent horizontal scroll */
+      body {
+        overflow-x: hidden;
+      }
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>SMP NEGERI ALALAU</span>
+          </a>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#visi-misi">Visi Misi</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#fasilitas">Fasilitas</a></li>
+            <li><a href="#prestasi">Prestasi</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+          </ul>
+          <div class="nav-cta">
+            <button onclick="openPPDBModal()" class="btn btn-primary">
+              Daftar PPDB
+            </button>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">
+              <i class="fas fa-bars"></i>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY (HALF SCREEN) -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+      <div class="mobile-nav-close">
+        <button class="mobile-nav-close-btn" onclick="toggleMenu()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-content">
+        <a href="#beranda" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-home"></i>
+          <span>Beranda</span>
+        </a>
+        <a href="#visi-misi" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-eye"></i>
+          <span>Visi & Misi</span>
+        </a>
+        <a href="#profil" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-user-tie"></i>
+          <span>Profil Sekolah</span>
+        </a>
+        <a href="#fasilitas" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-building"></i>
+          <span>Fasilitas</span>
+        </a>
+        <a href="#prestasi" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-trophy"></i>
+          <span>Prestasi</span>
+        </a>
+        <a href="#galeri" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-images"></i>
+          <span>Galeri</span>
+        </a>
+        <a href="#faq" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-question-circle"></i>
+          <span>FAQ</span>
+        </a>
+        <a href="#lokasi" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Lokasi</span>
+        </a>
+        <a href="#ppdb" class="mobile-nav-item" onclick="toggleMenu()">
+          <i class="fas fa-user-plus"></i>
+          <span>Daftar PPDB</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="beranda">
+      <div class="container hero-content">
+        <h1>SMP Negeri Alalau</h1>
+        <p>
+          Mewujudkan Generasi Cerdas, Berkarakter, dan Berprestasi di Kabupaten
+          Alor, Nusa Tenggara Timur
+        </p>
+        <div class="hero-buttons">
+          <button onclick="openPPDBModal()" class="btn btn-primary">
+            Daftar Sekarang
+          </button>
+          <a href="#visi-misi" class="btn btn-outline">Selengkapnya</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <div class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>B</h3>
+            <p>Akreditasi</p>
+          </div>
+          <div class="stat-item">
+            <h3>90+</h3>
+            <p>Siswa Aktif</p>
+          </div>
+          <div class="stat-item">
+            <h3>20+</h3>
+            <p>Guru & Staff</p>
+          </div>
+          <div class="stat-item">
+            <h3>15+</h3>
+            <p>Tahun Pengalaman</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISI MISI SECTION -->
+    <section class="vision-mission" id="visi-misi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Visi & Misi Sekolah</h2>
+          <p>Arah dan tujuan pendidikan di SMP Negeri Alalau</p>
+        </div>
+        <div class="vision-mission-grid">
+          <div class="vm-card visi">
+            <h3><i class="fas fa-eye"></i> VISI</h3>
+            <p>
+              "Terwujudnya Peserta Didik yang Beriman, Bertaqwa, Berprestasi,
+              Berbudi Pekerti Luhur, dan Peduli Lingkungan"
+            </p>
+          </div>
+          <div class="vm-card misi">
+            <h3><i class="fas fa-bullseye"></i> MISI</h3>
+            <ul>
+              <li>
+                Melaksanakan pembelajaran yang aktif, kreatif, efektif, dan
+                menyenangkan
+              </li>
+              <li>Menumbuhkan penghayatan dan pengamalan ajaran agama</li>
+              <li>Mengembangkan potensi akademik dan non-akademik siswa</li>
+              <li>Menanamkan nilai-nilai karakter dan budi pekerti luhur</li>
+              <li>
+                Menciptakan lingkungan sekolah yang bersih, hijau, dan nyaman
+              </li>
+              <li>Meningkatkan kompetensi guru dan tenaga kependidikan</li>
+              <li>Menjalin kerjasama dengan orang tua dan masyarakat</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMBUTAN KEPALA SEKOLAH -->
+    <section class="principal" id="profil">
+      <div class="container">
+        <div class="principal-content">
+          <div class="principal-img">
+            <img
+              src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Kepala Sekolah"
+            />
+          </div>
+          <div class="principal-text">
+            <h3>Sambutan Kepala Sekolah</h3>
+            <p>
+              "Selamat datang di website resmi SMP Negeri Alalau. Sekolah kami
+              berlokasi di Kecamatan Pantar Tengah, Kabupaten Alor, Nusa
+              Tenggara Timur."
+            </p>
+            <p>
+              Kami berkomitmen untuk memberikan pendidikan berkualitas bagi
+              putra-putri daerah, mengembangkan potensi akademik dan
+              non-akademik, serta membentuk karakter yang berakhlak mulia sesuai
+              dengan nilai-nilai Pancasila.
+            </p>
+            <div class="signature">
+              <p>Kepala Sekolah</p>
+              <p><strong>jhon kelsen, S.Pd</strong></p>
+              <small>NPSN: 324763409</small>
+            </div>
+            <button
+              onclick="openStructureModal()"
+              class="btn btn-primary btn-small"
+              style="margin-top: 15px"
+            >
+              <i class="fas fa-sitemap"></i> Lihat Struktur Organisasi
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASILITAS SECTION -->
+    <section class="facilities" id="fasilitas">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fasilitas Sekolah</h2>
+          <p>Sarana dan prasarana pendukung pembelajaran</p>
+        </div>
+        <div class="facilities-grid">
+          <div class="facility-card">
+            <div class="facility-icon"><i class="fas fa-chalkboard"></i></div>
+            <h3>Ruang Kelas</h3>
+            <p>
+              Ruang kelas nyaman dengan ventilasi baik dan fasilitas lengkap
+            </p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon"><i class="fas fa-book"></i></div>
+            <h3>Perpustakaan</h3>
+            <p>Koleksi buku lengkap untuk menunjang literasi siswa</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon"><i class="fas fa-laptop"></i></div>
+            <h3>Lab Komputer</h3>
+            <p>Laboratorium komputer dengan perangkat modern</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon"><i class="fas fa-flask"></i></div>
+            <h3>Lab IPA</h3>
+            <p>Laboratorium IPA untuk praktikum sains</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon"><i class="fas fa-mosque"></i></div>
+            <h3>Musholla</h3>
+            <p>Tempat ibadah untuk kegiatan keagamaan</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon">
+              <i class="fas fa-basketball-ball"></i>
+            </div>
+            <h3>Lapangan Olahraga</h3>
+            <p>Lapangan untuk kegiatan olahraga dan upacara</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon"><i class="fas fa-wifi"></i></div>
+            <h3>WiFi Area</h3>
+            <p>Akses internet untuk mendukung pembelajaran digital</p>
+          </div>
+          <div class="facility-card">
+            <div class="facility-icon"><i class="fas fa-parking"></i></div>
+            <h3>Area Parkir</h3>
+            <p>Parkir luas dan aman untuk siswa dan guru</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESTASI SECTION -->
+    <section class="achievements" id="prestasi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Prestasi Siswa</h2>
+          <p>Pencapaian membanggakan siswa SMP Negeri Alalau</p>
+        </div>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <span class="achievement-level">Tingkat Kabupaten</span>
+            <h3>Juara 1 Olimpiade Matematika</h3>
+            <p>OSN Matematika tingkat Kabupaten Alor</p>
+            <div class="achievement-year">
+              <i class="fas fa-calendar"></i> 2024
+            </div>
+          </div>
+          <div class="achievement-card">
+            <span class="achievement-level">Tingkat Provinsi</span>
+            <h3>Juara 2 Lomba Karya Ilmiah</h3>
+            <p>Lomba Karya Ilmiah Remaja NTT</p>
+            <div class="achievement-year">
+              <i class="fas fa-calendar"></i> 2024
+            </div>
+          </div>
+          <div class="achievement-card">
+            <span class="achievement-level">Tingkat Kabupaten</span>
+            <h3>Juara 1 Lomba Pramuka</h3>
+            <p>Perkemahan Pramuka Penggalang</p>
+            <div class="achievement-year">
+              <i class="fas fa-calendar"></i> 2023
+            </div>
+          </div>
+          <div class="achievement-card">
+            <span class="achievement-level">Tingkat Kabupaten</span>
+            <h3>Juara 3 Festival Seni Budaya</h3>
+            <p>Tari Tradisional Alor</p>
+            <div class="achievement-year">
+              <i class="fas fa-calendar"></i> 2023
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN (FEATURES) -->
+    <section class="features" id="akademik">
+      <div class="container">
+        <div class="section-title">
+          <h2>Mengapa Memilih Kami?</h2>
+          <p>
+            Program unggulan yang dirancang untuk mengembangkan potensi siswa di
+            Kabupaten Alor
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-book-reader feature-icon"></i>
+            <h3>Kurikulum Merdeka</h3>
+            <p>
+              Pembelajaran yang fleksibel dan berfokus pada pengembangan minat
+              serta bakat siswa.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-laptop-code feature-icon"></i>
+            <h3>Integrasi IT</h3>
+            <p>Pemanfaatan teknologi digital dalam proses belajar mengajar.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-heart feature-icon"></i>
+            <h3>Pendidikan Karakter</h3>
+            <p>Pembentukan akhlak mulia dan nilai-nilai Pancasila yang kuat.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-trophy feature-icon"></i>
+            <h3>Ekstrakurikuler</h3>
+            <p>
+              Berbagai pilihan ekskul: Pramuka, Olahraga, Seni Budaya, dan
+              lainnya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI SECTION -->
+    <section class="testimonials" id="testimoni">
+      <div class="container">
+        <div class="section-title">
+          <h2>Apa Kata Mereka?</h2>
+          <p>Testimoni dari wali murid dan alumni</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>
+                "Anak saya sangat berkembang sejak sekolah di SMP Negeri Alalau.
+                Guru-gurunya sangat perhatian dan fasilitasnya memadai."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                  alt="Orang Tua"
+                />
+                <div>
+                  <h4>Ibu Maria Kelen</h4>
+                  <span>Wali Murid Kelas VIII</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>
+                "Sekolah yang bagus dengan lingkungan yang kondusif untuk
+                belajar. Saya bangga menjadi alumni SMP Negeri Alalau."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                  alt="Alumni"
+                />
+                <div>
+                  <h4>Kak Yohanes Ratu</h4>
+                  <span>Alumni 2022</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>
+                "Pendidikan karakter yang ditekankan di sekolah ini sangat
+                bagus. Anak menjadi lebih disiplin dan sopan."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                  alt="Orang Tua"
+                />
+                <div>
+                  <h4>Bapak Petrus Kian</h4>
+                  <span>Wali Murid Kelas IX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pertanyaan Umum (FAQ)</h2>
+          <p>Informasi seputar PPDB dan sekolah</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item active">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span
+                ><i class="fas fa-question-circle"></i> Kapan pendaftaran PPDB
+                dibuka?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Pendaftaran PPDB SMP Negeri Alalau biasanya dibuka pada bulan
+                Mei-Juni setiap tahunnya. Informasi lebih lanjut dapat diperoleh
+                melalui email atau WhatsApp sekolah.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span
+                ><i class="fas fa-question-circle"></i> Apa saja syarat
+                pendaftaran?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Syarat pendaftaran meliputi: Fotokopi KK, Fotokopi Akta
+                Kelahiran, Fotokopi Ijazah SD, Pas Foto 3x4, dan Surat
+                Keterangan Lulus dari SD.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span
+                ><i class="fas fa-question-circle"></i> Apakah ada biaya
+                pendaftaran?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                SMP Negeri Alalau adalah sekolah negeri sehingga tidak dipungut
+                biaya pendaftaran. Semua proses PPDB gratis sesuai ketentuan
+                pemerintah.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span
+                ><i class="fas fa-question-circle"></i> Bagaimana sistem
+                pembelajaran?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Pembelajaran menggunakan Kurikulum Merdeka dengan pendekatan
+                student-centered learning. Jam belajar Senin-Jumat 07.00-15.00
+                WITA.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              <span
+                ><i class="fas fa-question-circle"></i> Apakah ada program
+                beasiswa?</span
+              >
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Untuk siswa berprestasi dan kurang mampu, tersedia program
+                bantuan seperti KIP (Kartu Indonesia Pintar) dan beasiswa
+                prestasi dari pemerintah daerah.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section id="galeri">
+      <div class="container">
+        <div class="section-title">
+          <h2>Galeri Kegiatan</h2>
+          <p>
+            Dokumentasi kegiatan belajar mengajar dan prestasi siswa SMP Negeri
+            Alalau
+          </p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Gallery items will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL KEGIATAN -->
+    <div id="activityModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close-modal" onclick="closeModal()">&times;</span>
+          <img id="modalImage" src="" alt="Activity" />
+        </div>
+        <div class="modal-body">
+          <h2 id="modalTitle">Judul Kegiatan</h2>
+          <div class="modal-meta">
+            <span
+              ><i class="fas fa-calendar"></i
+              ><span id="modalDate">Tanggal</span></span
+            >
+            <span
+              ><i class="fas fa-map-marker-alt"></i
+              ><span id="modalLocation">Lokasi</span></span
+            >
+            <span
+              ><i class="fas fa-users"></i
+              ><span id="modalParticipants">Peserta</span></span
+            >
+          </div>
+          <div class="modal-description" id="modalDescription"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRUCTURE MODAL -->
+    <div id="structureModal" class="structure-modal">
+      <div class="structure-modal-content">
+        <div class="structure-modal-header">
+          <span class="close-structure" onclick="closeStructureModal()"
+            >&times;</span
+          >
+          <h2><i class="fas fa-sitemap"></i> Struktur Organisasi</h2>
+          <p>SMP Negeri Alalau - Tahun Ajaran 2024/2025</p>
+        </div>
+        <div class="structure-modal-body">
+          <div class="org-chart">
+            <div class="org-box head">
+              <h4>Kepala Sekolah</h4>
+              <p>jhon kelsen, S.Pd</p>
+            </div>
+            <div class="org-grid">
+              <div class="org-box">
+                <h4>Waka Kurikulum</h4>
+                <p>Drs. Markus Boli, M.Pd</p>
+              </div>
+              <div class="org-box">
+                <h4>Waka Kesiswaan</h4>
+                <p>Maria Kelen, S.Pd</p>
+              </div>
+              <div class="org-box">
+                <h4>Waka Sarpras</h4>
+                <p>Yohanes Ratu, S.Pd</p>
+              </div>
+              <div class="org-box">
+                <h4>Guru BK</h4>
+                <p>Elisabeth Kelen, S.Pd</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PPDB EMAIL MODAL -->
+    <div id="ppdbModal" class="ppdb-modal">
+      <div class="ppdb-modal-content">
+        <span class="close-ppdb" onclick="closePPDBModal()">&times;</span>
+        <i class="fas fa-envelope-open-text"></i>
+        <h2>Informasi Pendaftaran PPDB</h2>
+        <p>Untuk informasi PPDB, hubungi email resmi:</p>
+        <div class="email-box">
+          <p id="schoolEmail">smpnalalau@gmail.com</p>
+          <small>Klik tombol di bawah untuk menyalin email</small>
+        </div>
+        <button class="copy-btn" onclick="copyEmail()">
+          <i class="fas fa-copy"></i> Salin Email
+        </button>
+        <p style="margin-top: 20px; font-size: 0.9rem">
+          Atau hubungi kami via WhatsApp:<br />
+          <strong style="color: var(--primary-color)">+6285692715042</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- LOKASI / MAPS SECTION -->
+    <section class="maps-section" id="lokasi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Lokasi Sekolah</h2>
+          <p>Kunjungi kami di lokasi berikut</p>
+        </div>
+        <div class="maps-container">
+          <div class="maps-info">
+            <h3>Informasi Lokasi</h3>
+            <div class="maps-info-box">
+              <h4><i class="fas fa-map-marker-alt"></i> Alamat Lengkap</h4>
+              <p><strong>SMP Negeri Alalau</strong></p>
+              <p>Jl. Air Mama, RT 01 / RW 01</p>
+              <p>Desa Aramaba</p>
+              <p>Kecamatan Pantar Tengah</p>
+              <p>Kabupaten Alor</p>
+              <p>Provinsi Nusa Tenggara Timur</p>
+            </div>
+            <div class="maps-info-box">
+              <h4><i class="fas fa-school"></i> Data Sekolah</h4>
+              <p><strong>NPSN:</strong> 50308995</p>
+              <p><strong>Status:</strong> Sekolah Negeri</p>
+              <p><strong>Akreditasi:</strong> B</p>
+              <p><strong>Bentuk Pendidikan:</strong> SMP</p>
+            </div>
+            <div class="maps-info-box">
+              <h4><i class="fas fa-clock"></i> Jam Operasional</h4>
+              <p>Senin - Jumat: 07.00 - 15.00 WITA</p>
+              <p>Sabtu: 07.00 - 12.00 WITA</p>
+              <p>Minggu: Libur</p>
+            </div>
+          </div>
+          <div class="maps-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d438.86946902142296!2d124.17073441297002!3d-8.442255192792306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e9!4m3!3m2!1d-6.138534!2d106.902664!4m3!3m2!1d-8.4423551!2d124.1710976!5e1!3m2!1sid!2sid!4v1772108711014!5m2!1sid!2sid"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="ppdb">
+      <div class="container">
+        <h2>Penerimaan Peserta Didik Baru (PPDB) Telah Dibuka!</h2>
+        <p>
+          Kuota terbatas. Segera daftarkan putra-putri Anda di SMP Negeri Alalau
+        </p>
+        <button
+          onclick="openPPDBModal()"
+          class="btn btn-primary"
+          style="background-color: white; color: var(--primary-color)"
+        >
+          Daftar Online Sekarang
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="kontak">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4>SMP Negeri Alalau</h4>
+            <p>
+              Mencetak generasi emas yang berakhlak mulia, cerdas, dan berdaya
+              saing dari Kabupaten Alor, Nusa Tenggara Timur.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Tautan Cepat</h4>
+            <ul>
+              <li><a href="#beranda">Beranda</a></li>
+              <li><a href="#visi-misi">Visi & Misi</a></li>
+              <li><a href="#fasilitas">Fasilitas</a></li>
+              <li><a href="#prestasi">Prestasi</a></li>
+              <li><a href="#galeri">Galeri</a></li>
+              <li><a href="#ppdb">Info PPDB</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Hubungi Kami</h4>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Air Mama, Kec. Pantar
+                Tengah, Kab. Alor, NTT
+              </li>
+              <li><i class="fas fa-phone"></i> +62 812 197 80401</li>
+              <li><i class="fas fa-envelope"></i> smpnalalau@gmail.com</li>
+              <li><i class="fas fa-id-card"></i> NPSN: 50308995</li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2013 SMP Negeri Alalau. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      // Data Galeri Kegiatan
+      const galleryData = [
+        {
+          id: 1,
+          title: "Kegiatan Belajar Mengajar di Kelas",
+          image:
+            "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          shortDesc:
+            "Suasana pembelajaran yang interaktif dan menyenangkan di SMP Negeri Alalau.",
+          date: "15 Januari 2024",
+          location: "Ruang Kelas VII-VIII",
+          participants: "250 Siswa",
+          fullDesc: `<p>SMP Negeri Alalau berkomitmen untuk menciptakan suasana belajar yang kondusif dan menyenangkan. Dengan metode pembelajaran yang inovatif, siswa diajak untuk aktif berpartisipasi dalam setiap kegiatan belajar mengajar.</p><p>Guru-guru kami yang berpengalaman menggunakan berbagai media pembelajaran modern untuk memudahkan pemahaman siswa.</p>`,
+        },
+        {
+          id: 2,
+          title: "Kegiatan Pramuka dan Kepemimpinan",
+          image:
+            "https://images.unsplash.com/photo-1564981797816-1043664bf78d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          shortDesc:
+            "Latihan Pramuka untuk membentuk karakter dan jiwa kepemimpinan siswa.",
+          date: "20 Januari 2024",
+          location: "Lapangan Sekolah",
+          participants: "150 Peserta",
+          fullDesc: `<p>Kegiatan Pramuka merupakan salah satu ekstrakurikuler wajib di SMP Negeri Alalau. Melalui kegiatan ini, siswa dilatih untuk memiliki jiwa kepemimpinan, kedisiplinan, dan rasa cinta tanah air.</p>`,
+        },
+        {
+          id: 3,
+          title: "Peringatan Hari Kemerdekaan RI",
+          image:
+            "https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          shortDesc:
+            "Peringatan Hari Kemerdekaan Republik Indonesia dengan berbagai lomba dan upacara.",
+          date: "17 Agustus 2024",
+          location: "Lapangan Sekolah",
+          participants: "Seluruh Siswa & Guru",
+          fullDesc: `<p>SMP Negeri Alalau secara rutin memperingati Hari Kemerdekaan Republik Indonesia sebagai bagian dari pendidikan nasionalisme dan cinta tanah air.</p>`,
+        },
+        {
+          id: 4,
+          title: "Olimpiade Sains Tingkat Sekolah",
+          image:
+            "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          shortDesc:
+            "Kompetisi sains untuk mengasah kemampuan akademik siswa di bidang Matematika dan IPA.",
+          date: "5 Februari 2024",
+          location: "Ruang Ujian",
+          participants: "80 Peserta",
+          fullDesc: `<p>Untuk meningkatkan prestasi akademik siswa, SMP Negeri Alalau secara rutin mengadakan Olimpiade Sains internal.</p>`,
+        },
+        {
+          id: 5,
+          title: "Kegiatan Bakti Sosial",
+          image:
+            "https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          shortDesc:
+            "Siswa SMP Negeri Alalau berbagi kebahagiaan dengan masyarakat sekitar melalui bakti sosial.",
+          date: "10 Maret 2024",
+          location: "Desa Aramaba",
+          participants: "100 Relawan",
+          fullDesc: `<p>SMP Negeri Alalau peduli terhadap lingkungan sekitar. Kegiatan bakti sosial rutin dilakukan sebagai wujud kepedulian sosial.</p>`,
+        },
+        {
+          id: 6,
+          title: "Pentas Seni dan Budaya Daerah",
+          image:
+            "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          shortDesc:
+            "Pelestarian budaya lokal Alor melalui pentas seni dan pertunjukan tradisional.",
+          date: "20 Mei 2024",
+          location: "Lapangan Sekolah",
+          participants: "200 Penampil",
+          fullDesc: `<p>Sebagai bentuk pelestarian budaya lokal, SMP Negeri Alalau mengadakan pentas seni dan budaya daerah setiap tahun.</p>`,
+        },
+      ];
+
+      // Render Gallery
+      function renderGallery() {
+        const galleryGrid = document.getElementById("galleryGrid");
+        galleryGrid.innerHTML = galleryData
+          .map(
+            (item) => `
+<div class="gallery-card">
+<img src="${item.image}" alt="${item.title}" loading="lazy">
+<div class="gallery-card-content">
+<h3>${item.title}</h3>
+<div class="gallery-meta">
+<span><i class="fas fa-calendar"></i> ${item.date}</span>
+<span><i class="fas fa-users"></i> ${item.participants}</span>
+</div>
+<p>${item.shortDesc}</p>
+<button class="btn btn-primary btn-small" onclick="openModal(${item.id})">
+<i class="fas fa-book-open"></i> Baca Selengkapnya
+</button>
+</div>
+</div>
+`,
+          )
+          .join("");
+      }
+
+      // Open Activity Modal
+      function openModal(id) {
+        const item = galleryData.find((g) => g.id === id);
+        if (item) {
+          document.getElementById("modalImage").src = item.image;
+          document.getElementById("modalTitle").textContent = item.title;
+          document.getElementById("modalDate").textContent = item.date;
+          document.getElementById("modalLocation").textContent = item.location;
+          document.getElementById("modalParticipants").textContent =
+            item.participants;
+          document.getElementById("modalDescription").innerHTML = item.fullDesc;
+          document.getElementById("activityModal").style.display = "block";
+          document.body.style.overflow = "hidden";
+        }
+      }
+
+      // Close Activity Modal
+      function closeModal() {
+        document.getElementById("activityModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // Toggle FAQ
+      function toggleFaq(element) {
+        const faqItem = element.parentElement;
+        const isActive = faqItem.classList.contains("active");
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          item.classList.remove("active");
+        });
+        if (!isActive) {
+          faqItem.classList.add("active");
+        }
+      }
+
+      // Structure Modal
+      function openStructureModal() {
+        document.getElementById("structureModal").style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeStructureModal() {
+        document.getElementById("structureModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // PPDB Modal
+      function openPPDBModal() {
+        document.getElementById("ppdbModal").style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePPDBModal() {
+        document.getElementById("ppdbModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // Copy Email
+      function copyEmail() {
+        const email = document.getElementById("schoolEmail").textContent;
+        navigator.clipboard
+          .writeText(email)
+          .then(() => {
+            const copyBtn = document.querySelector(".copy-btn");
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Email Tersalin!';
+            copyBtn.style.background = "#10b981";
+            setTimeout(() => {
+              copyBtn.innerHTML = originalText;
+              copyBtn.style.background = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            alert("Gagal menyalin email. Silakan copy manual: " + email);
+          });
+      }
+
+      // Toggle Mobile Menu (Half Screen)
+      function toggleMenu() {
+        const mobileNav = document.getElementById("mobileNavOverlay");
+        mobileNav.classList.toggle("active");
+        document.body.style.overflow = mobileNav.classList.contains("active")
+          ? "hidden"
+          : "auto";
+      }
+
+      // Close mobile menu when clicking outside
+      window.addEventListener("click", function (event) {
+        const mobileNav = document.getElementById("mobileNavOverlay");
+        const mobileBtn = document.querySelector(".mobile-menu-btn");
+        if (
+          event.target == mobileNav &&
+          !event.target.closest(".mobile-nav-content")
+        ) {
+          toggleMenu();
+        }
+      });
+
+      // Event Listeners for Modals
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("activityModal")) {
+          closeModal();
+        }
+        if (event.target == document.getElementById("structureModal")) {
+          closeStructureModal();
+        }
+        if (event.target == document.getElementById("ppdbModal")) {
+          closePPDBModal();
+        }
+      };
+
+      // Initialize Gallery on page load
+      window.onload = function () {
+        renderGallery();
+      };
+
+      // Sticky Navbar Effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+          header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.15)";
+        } else {
+          header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+        }
+      });
+
+      // Prevent horizontal scroll
+      window.addEventListener("resize", function () {
+        document.body.style.overflow = "auto";
+      });
+    </script>
+  </body>
+</html>
